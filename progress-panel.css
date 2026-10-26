@@ -1,0 +1,135 @@
+.progress-panel {
+  position: fixed;
+  z-index: 9;
+  top: var(--progress-panel-top, 108px);
+  right: max(12px, env(safe-area-inset-right));
+  width: min(300px, calc(100vw - 24px));
+  border: 1px solid #596046;
+  background: rgba(20, 25, 19, .97);
+  color: var(--paper);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, .35);
+  backdrop-filter: blur(12px);
+}
+
+.progress-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 52px;
+  padding: 4px 4px 4px 16px;
+}
+
+.progress-panel-title {
+  font-size: 10px;
+  line-height: 1.4;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.progress-panel-toggle {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--gold);
+  font-size: 22px;
+  line-height: 1;
+}
+
+.progress-panel-toggle:hover {
+  background: rgba(208, 180, 123, .08);
+  border-color: var(--line);
+}
+
+.progress-panel-content {
+  max-height: max(0px, calc(100dvh - var(--progress-panel-top, 108px) - 66px));
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: #727b5c transparent;
+}
+
+.progress-panel-content[hidden] { display: none; }
+.progress-panel.is-collapsed { width: 180px; }
+
+.progress-panel-game {
+  padding: 16px;
+  border-top: 1px solid var(--line);
+}
+
+.progress-panel-game-title {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 23px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--gold);
+}
+
+.progress-panel-game-title a:hover { text-decoration: underline; }
+
+.progress-panel-date {
+  display: block;
+  margin-top: 7px;
+  font-size: 8px;
+  color: var(--muted);
+}
+
+.progress-panel-meter { margin-top: 17px; }
+
+.progress-panel-label {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+.progress-panel-label label { color: #d3d8c8; }
+.progress-panel-label > span { color: var(--gold); }
+.progress-panel progress { height: 3px; }
+
+@media (max-width: 900px) {
+  .has-progress-panel .hero-content {
+    padding-top: max(205px, calc(var(--progress-panel-reserved-height, 0px) + 128px));
+  }
+
+  .has-progress-panel .hero {
+    min-height: max(720px, calc(var(--progress-panel-reserved-height, 0px) + 600px));
+  }
+
+  .progress-panel-game {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: 16px;
+  }
+
+  .progress-panel-game-title, .progress-panel-date { grid-column: 1 / -1; }
+  .progress-panel-label { min-height: 28px; align-items: flex-start; }
+}
+
+@media (max-width: 600px) {
+  .progress-panel { width: min(280px, calc(100vw - 24px)); }
+  .progress-panel-game { padding: 13px 16px 16px; }
+  .progress-panel-game-title { font-size: 21px; }
+  .progress-panel-meter { margin-top: 13px; }
+
+  .has-progress-panel .hero-content {
+    padding-top: max(205px, calc(var(--progress-panel-reserved-height, 0px) + 112px));
+  }
+
+  .has-progress-panel .hero {
+    min-height: max(700px, calc(var(--progress-panel-reserved-height, 0px) + 500px));
+  }
+}
+
+@media print {
+  .progress-panel { display: none; }
+}

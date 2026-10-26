@@ -4,26 +4,29 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#101110">
-  <title>Corebreach — Independent games. Unforgettable worlds.</title>
-  <meta name="description" content="Corebreach is an independent game studio building worlds worth getting lost in. Discover Runefall, our dark fantasy action-survival game, and follow its development.">
+  <title>Core Breach — Independent games. Unforgettable worlds.</title>
+  <meta name="description" content="Core Breach is an independent game studio building worlds worth getting lost in. Discover Runefall, our dark fantasy action-survival game, and follow its development.">
   <link rel="canonical" href="https://corebreach.io/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Corebreach — Worlds worth getting lost in.">
-  <meta property="og:description" content="Independent games. Deep systems. One more run. Discover Runefall, in development at Corebreach.">
+  <meta property="og:title" content="Core Breach — Worlds worth getting lost in.">
+  <meta property="og:description" content="Independent games. Deep systems. One more run. Discover Runefall, in development at Core Breach.">
   <meta property="og:url" content="https://corebreach.io/">
   <meta property="og:image" content="https://corebreach.io/assets/images/social-card.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="favicon.png" type="image/png">
   <link rel="preload" as="image" href="assets/images/runefall-forge.webp" fetchpriority="high">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="progress-panel.css">
   <script src="site.js" defer></script>
+  <script src="game-progress.js" defer></script>
+  <script src="progress-panel.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
-    <a class="brand" href="./" aria-label="Corebreach home">
+    <a class="brand" href="./" aria-label="Core Breach home">
       <img src="assets/images/corebreach-mark.png" width="48" height="48" alt="">
-      <span>COREBREACH</span>
+      <span>Core Breach</span>
     </a>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav"><span>Menu</span><span class="menu-lines" aria-hidden="true"></span></button>
     <nav id="main-nav" class="main-nav" aria-label="Main navigation">
@@ -51,7 +54,7 @@
       <span class="hero-side-label" aria-hidden="true">IMAGINED INDEPENDENTLY. BUILT WITH INTENT.</span>
     </section>
 
-    <div class="studio-strip" aria-hidden="true"><span>Small studio.</span><span class="strip-symbol">✳</span><span>Deep systems.</span><span class="strip-symbol">✳</span><span>Endless possibility.</span><span class="strip-symbol">✳</span><span>Corebreach.</span></div>
+    <div class="studio-strip" aria-hidden="true"><span>Small studio.</span><span class="strip-symbol">✳</span><span>Deep systems.</span><span class="strip-symbol">✳</span><span>Endless possibility.</span><span class="strip-symbol">✳</span><span>Core Breach.</span></div>
 
     <section class="games-section section-pad" id="games" aria-labelledby="games-title">
       <div class="container">
@@ -63,7 +66,7 @@
         <article class="game-feature" id="runefall" aria-labelledby="runefall-title">
           <div class="game-art">
             <img src="assets/images/runefall-runeweaver.webp" alt="Runefall character artwork: a dark-coated hunter channels a glowing runestone into a golden protective ward." width="1080" height="1080" loading="lazy">
-            <span class="art-label">A world by Corebreach</span>
+            <span class="art-label">A world by Core Breach</span>
             <span class="game-art-corner" aria-hidden="true">+<br>+</span>
           </div>
           <div class="game-story">
@@ -77,7 +80,7 @@
           </div>
         </article>
 
-        <div class="development" aria-labelledby="development-title">
+        <div class="development" aria-labelledby="development-title" data-game-progress="runefall">
           <div class="development-intro"><p class="eyebrow">From the workshop</p><h3 id="development-title">The road to Runefall.</h3><p>A look at the work behind the world.</p><span class="snapshot-date">Development snapshot <span aria-hidden="true">/</span> <time datetime="2026-10-26">Oct 26, 2026</time></span></div>
           <div class="progress-grid">
             <div class="progress-item"><div class="progress-label"><label for="progress-core">Core features</label><span>95<span class="percent">%</span></span></div><progress id="progress-core" max="100" value="95">95%</progress></div>
@@ -120,7 +123,7 @@
     <section class="studio-section section-pad" id="studio" aria-labelledby="studio-title">
       <div class="container studio-layout">
         <div class="studio-symbol" aria-hidden="true"><img src="assets/images/corebreach-logo.png" alt="" width="1024" height="1024" loading="lazy"><span class="symbol-coordinate">THE CORE IS JUST THE BEGINNING.</span></div>
-        <div class="studio-copy"><p class="eyebrow section-index">02 / The studio</p><h2 id="studio-title">Curiosity at<br>the core.</h2><p class="studio-lead">We’re Corebreach. An independent studio making the games we want to get lost in.</p><p class="body-copy">We’re drawn to worlds with atmosphere, systems with depth, and that moment when a game surprises you. The right combination. A narrow escape. An idea that becomes your next run.</p><p class="body-copy">Runefall is the first world we’re sharing. There’s more beyond the breach.</p><a class="text-link" href="mailto:support@corebreach.io">Say hello <span aria-hidden="true">↗</span></a></div>
+        <div class="studio-copy"><p class="eyebrow section-index">02 / The studio</p><h2 id="studio-title">Curiosity at<br>the core.</h2><p class="studio-lead">We’re Core Breach. An independent studio making the games we want to get lost in.</p><p class="body-copy">We’re drawn to worlds with atmosphere, systems with depth, and that moment when a game surprises you. The right combination. A narrow escape. An idea that becomes your next run.</p><p class="body-copy">Runefall is the first world we’re sharing. There’s more beyond the breach.</p><a class="text-link" href="mailto:support@corebreach.io">Say hello <span aria-hidden="true">↗</span></a></div>
       </div>
     </section>
 
@@ -133,7 +136,7 @@
     </section>
   </main>
 
-  <footer class="site-footer container"><a class="brand footer-brand" href="./"><img src="assets/images/corebreach-mark.png" width="36" height="36" alt=""><span>COREBREACH</span></a><p>Independent games. Unforgettable worlds.</p><span>© 2026 Corebreach</span><a href="#main" class="back-top">Back to top <span aria-hidden="true">↑</span></a></footer>
+  <footer class="site-footer container"><a class="brand footer-brand" href="./"><img src="assets/images/corebreach-mark.png" width="36" height="36" alt=""><span>Core Breach</span></a><p>Independent games. Unforgettable worlds.</p><span>© 2026 Core Breach</span><a href="#main" class="back-top">Back to top <span aria-hidden="true">↑</span></a></footer>
 
   <dialog class="lightbox" id="screenshot-dialog" aria-labelledby="lightbox-caption">
     <div class="lightbox-toolbar"><span>RUNEFALL <span class="lightbox-counter"></span></span><button class="icon-button" data-close-lightbox type="button" aria-label="Close screenshot gallery">Close <span aria-hidden="true">×</span></button></div>
