@@ -1,0 +1,150 @@
+{
+	"capture_date": "2026-10-26",
+	"forge": {
+		"expansions": {
+			"autoattack": [
+				"Bleed I",
+				"Magnified Area I"
+			],
+			"dash": [
+				"Quickstep"
+			],
+			"skill:0": [
+				"Magnified Area I",
+				"Uhtred's Omen"
+			],
+			"skill:1": [
+				"Rapid Casting I"
+			],
+			"skill:2": [
+				"Magnified Area I"
+			]
+		},
+		"skills": [
+			{
+				"disabled": false,
+				"disabled_reason": "",
+				"instance_id": "promo_skill_0",
+				"level": 1,
+				"name": "Double Beat",
+				"quality": 0,
+				"skill_id": "double_beat",
+				"support_slots_unlocked": 3,
+				"supports": [
+					null,
+					null,
+					null,
+					null,
+					null,
+					null
+				]
+			},
+			{
+				"disabled": false,
+				"disabled_reason": "",
+				"instance_id": "promo_skill_1",
+				"level": 1,
+				"name": "Blood Lattice",
+				"quality": 0,
+				"skill_id": "blood_lattice",
+				"support_slots_unlocked": 3,
+				"supports": [
+					null,
+					null,
+					null,
+					null,
+					null,
+					null
+				]
+			},
+			{
+				"disabled": false,
+				"disabled_reason": "",
+				"instance_id": "promo_skill_2",
+				"level": 1,
+				"name": "Hollow Verdict",
+				"quality": 0,
+				"skill_id": "hollow_verdict",
+				"support_slots_unlocked": 3,
+				"supports": [
+					null,
+					null,
+					null,
+					null,
+					null,
+					null
+				]
+			},
+			{
+				"disabled": false,
+				"disabled_reason": "",
+				"instance_id": "promo_skill_3",
+				"level": 1,
+				"name": "Spirit Litany",
+				"quality": 0,
+				"skill_id": "spirit_litany",
+				"support_slots_unlocked": 3,
+				"supports": [
+					null,
+					null,
+					null,
+					null,
+					null,
+					null
+				]
+			},
+			null,
+			null
+		],
+		"stage_level": 8
+	},
+	"inventory": {
+		"empty_slots": [
+			"amulet",
+			"off_hand",
+			"off_ring",
+			"runic_shield_1",
+			"runic_shield_2",
+			"runic_shield_3",
+			"gloves"
+		],
+		"equipped": {
+			"belt": {
+				"id": "life_belt",
+				"name": "Rare Life Belt T1 X6F6ZI",
+				"rarity": "rare"
+			},
+			"body": {
+				"id": "plate_t1",
+				"name": "Plate T1",
+				"rarity": "magic"
+			},
+			"feet": {
+				"id": "plate_boots_t1",
+				"name": "Plate Boots T1",
+				"rarity": "normal"
+			},
+			"head": {
+				"id": "plate_helmet_t1",
+				"name": "Plate Helmet T1",
+				"rarity": "normal"
+			},
+			"main_hand": {
+				"id": "hammer_1h_t1",
+				"name": "Rare Hammer T1 XIOJFI",
+				"rarity": "rare"
+			},
+			"main_ring": {
+				"id": "life_ring",
+				"name": "Life Ring T1",
+				"rarity": "magic"
+			}
+		},
+		"rarity_counts": {
+			"magic": 2,
+			"normal": 2,
+			"rare": 2
+		}
+	},
+	"source": "Runefall development project"
+}

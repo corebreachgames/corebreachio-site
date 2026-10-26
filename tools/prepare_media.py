@@ -20,13 +20,17 @@ web_image(GAME / 'assets/sprites/cel/menu_forge.png', 'runefall-forge.webp')
 web_image(GAME / 'docs/art/app-icon/04d-runeweaver.png', 'runefall-runeweaver.webp', 1080)
 web_image(GAME / 'docs/art/app-icon/03d-ember-glyph.png', 'runefall-runestone.webp', 700)
 screens = {
-    'runefall-forge-gameplay.webp': 'docs/verification/forge-rebuild/gameplay.png',
-    'runefall-chapel-gameplay.webp': 'docs/verification/chapel-rebuild/gameplay.png',
+    'runefall-forge-gameplay.webp': ROOT / 'assets/press/screenshots/runefall-forge.png',
+    'runefall-inventory.webp': ROOT / 'assets/press/screenshots/runefall-inventory.png',
     'runefall-library-gameplay.webp': 'docs/verification/final-twelve-stages/library_gameplay.png',
     'runefall-castle-gameplay.webp': 'docs/verification/final-twelve-stages/castle_gameplay.png',
     'runefall-passive-tree.webp': 'docs/superpowers/artifacts/runic-tree-desktop.png',
 }
 for name, source in screens.items():
-    web_image(GAME / source, name, 1440, 90)
-    web_image(GAME / source, name.replace('.webp', '-thumb.webp'), 720, 85)
+    source = Path(source)
+    if not source.is_absolute():
+        source = GAME / source
+    fresh_capture = source.is_relative_to(ROOT / 'assets/press/screenshots')
+    web_image(source, name, 1440, 94 if fresh_capture else 90)
+    web_image(source, name.replace('.webp', '-thumb.webp'), 720, 90 if fresh_capture else 85)
 print('Prepared logo, artwork, and five game screenshots.')

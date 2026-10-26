@@ -1,7 +1,7 @@
 """Validate the public static site and every local link before deployment."""
 from html.parser import HTMLParser
 from pathlib import Path
-from urllib.parse import urlsplit, unquote
+from urllib.parse import urlsplit, unquote, urljoin
 import sys
 import zipfile
 
@@ -16,8 +16,13 @@ class Page(HTMLParser):
         self.ids = set()
         self.images = []
         self.progress = []
+        self.base_href = None
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
+        if tag == 'base' and attrs.get('href'):
+            if self.base_href is None:
+                self.base_href = attrs['href']
+            return
         if 'id' in attrs:
             if attrs['id'] in self.ids:
                 errors.append(f'Duplicate id: {attrs["id"]}')
@@ -40,11 +45,16 @@ for name in PUBLIC_HTML:
     parser.feed(path.read_text(encoding='utf-8'))
     pages[path] = parser
 for path, page in pages.items():
+    page_url = 'https://site.invalid/' + path.relative_to(ROOT).as_posix()
+    base_url = urljoin(page_url, page.base_href) if page.base_href else page_url
     for ref in page.refs:
         url = urlsplit(ref)
         if url.scheme or url.netloc:
             continue
-        target = (path.parent / unquote(url.path)).resolve() if url.path else path
+        url = urlsplit(urljoin(base_url, ref))
+        if url.netloc != 'site.invalid':
+            continue
+        target = (ROOT / unquote(url.path).lstrip('/')).resolve()
         if url.path.endswith('/') or target.is_dir():
             target = target / 'index.html'
         if not target.is_relative_to(ROOT) or not target.exists():

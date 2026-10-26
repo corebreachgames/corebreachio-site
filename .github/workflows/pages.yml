@@ -1,0 +1,53 @@
+name: Publish GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: read
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Validate static site
+        run: |
+          python3 -m unittest discover -s tools -p check_site_test.py
+          python3 tools/check_site.py
+          node --check site.js
+          node --check game-progress.js
+          node --check progress-panel.js
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - name: Collect public files
+        run: |
+          mkdir _site
+          cp index.html 404.html styles.css site.js progress-panel.css progress-panel.js game-progress.js favicon.png CNAME .nojekyll robots.txt sitemap.xml _site/
+          cp -R assets press _site/
+      - name: Upload site
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy site
+        id: deployment
+        uses: actions/deploy-pages@v4
