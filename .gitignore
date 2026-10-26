@@ -1,0 +1,5 @@
+.capture/
+.preview/
+node_modules/
+logs/
+__pycache__/
