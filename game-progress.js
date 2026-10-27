@@ -10,6 +10,8 @@ window.corebreachGameProgress = [
       { id: 'beta', label: 'Beta testing', value: 10 },
       { id: 'graphics', label: 'Graphics update', value: 75 },
       { id: 'performance', label: 'Performance enhancements', value: 0 },
+      { id: 'music', label: 'Music', value: 75 },
+      { id: 'sounds', label: 'Sound Effects', value: 40 },
     ],
   },
 ];
