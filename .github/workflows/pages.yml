@@ -32,7 +32,7 @@ jobs:
         run: |
           mkdir _site
           cp index.html 404.html styles.css site.js progress-panel.css progress-panel.js game-progress.js favicon.png CNAME .nojekyll robots.txt sitemap.xml _site/
-          cp -R assets press _site/
+          cp -R assets press privacy _site/
       - name: Upload site
         uses: actions/upload-pages-artifact@v4
         with:

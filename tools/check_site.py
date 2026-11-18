@@ -6,7 +6,7 @@ import sys
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
-PUBLIC_HTML = ['index.html', 'press/index.html', '404.html']
+PUBLIC_HTML = ['index.html', 'press/index.html', 'privacy/index.html', '404.html']
 errors = []
 
 class Page(HTMLParser):

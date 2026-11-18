@@ -15,6 +15,7 @@ class LocalLinkChecks(unittest.TestCase):
         self.write('tools/check_site.py', Path(__file__).with_name('check_site.py').read_text(encoding='utf-8'))
         self.write('index.html', ''.join(f'<progress value="{value}"></progress>' for value in [95, 10, 75, 0]))
         self.write('press/index.html', '<h1 id="facts">Press</h1>')
+        self.write('privacy/index.html', '<h1>Privacy policy</h1>')
         self.write('404.html', '<h1 id="main">Missing page</h1>')
         for name in ['assets/video/runefall-gameplay.mp4', '.nojekyll', 'CNAME', '.github/workflows/pages.yml', 'robots.txt', 'sitemap.xml', 'assets/logo mark.png']:
             self.write(name, '')
